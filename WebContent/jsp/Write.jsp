@@ -18,7 +18,7 @@
    String content = request.getParameter( "article_content" ) ;
    
    if(id != null && content != null ){
-		success_nulis =    write.writeArticle(id, content); 	   
+		success_nulis = write.writeArticle(id, content); 	   
    }
 %>
 
@@ -49,14 +49,12 @@ if(success_nulis){
 <table>
 	<tr>
 		<td>
-				<div>
-					<b><a href="DoLogout.jsp">Logout</a></b>
-				</div>
-			</td>
-		</tr>
-	</table>
-	
-
-	
+			<div>
+				<b><a href="DoLogout.jsp">Logout</a></b>
+			</div>
+		</td>
+	</tr>
+</table>
+		
 </body>
 </html>

@@ -54,11 +54,11 @@ public class ModifyArticle {
 				NamedNodeMap nnp2 = n2.getAttributes(); 
 				String content = nnp2.getNamedItem("text").getNodeValue(); 
 				if(content != null ){
-					return result = content; 
+					result = content; 
 				}	
 			}
 		}
-		return result; 
+		return result.trim(); 
 	}
 
 }

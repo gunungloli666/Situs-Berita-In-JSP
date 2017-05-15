@@ -50,9 +50,9 @@ List<Article> daftarArticle = article.getAllArticle();
 </table>
 
 <table >
-<tr >
+<tr>
 <td> 
-	<a href="NewArticle.jsp" >Article Baru</a>
+	<b><a href="NewArticle.jsp" >Article Baru</a></b> 
 </td>
 </tr>
 </table>

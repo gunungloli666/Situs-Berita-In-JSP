@@ -24,27 +24,26 @@
    }
 %>
 <form method="GET" action="Modify.jsp" > 
-<table width="100%">
-<tr>
-	
-	<td>
-	<input type="hidden" name="article_id" value="<%= article_id %>" >
-	<%= article_id %>
-	</td>
-</tr>
-<tr>
-<td  width="72%" colspan="2" >
-	<textarea rows="20" cols="50"  name="article" >
-	<%= articleviewed  %>
-	</textarea>
-</td>
-</tr>
-<tr>
-<td>
-<input type="submit" value="update" ></input> 
-</td>
-</tr>
-</table>
+    <table width="100%">
+        <tr>
+        	<td>
+        		<input type="hidden" name="article_id" value="<%= article_id %>" >
+        		<%= article_id %>
+        	</td>
+        </tr>
+        <tr>
+        <td>
+        	<div align="left" >
+        	<textarea rows="20" cols="50"  name="article" ><%=articleviewed%></textarea>
+        	</div>
+        </td>
+        </tr>
+        <tr>
+        	<td>
+        	<input type="submit" value="update" ></input> 
+        	</td>
+        </tr>
+    </table>
 </form>
 </body>
 </html>

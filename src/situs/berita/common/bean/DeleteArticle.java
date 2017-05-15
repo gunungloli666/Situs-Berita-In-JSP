@@ -16,16 +16,17 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import situs.berita.common.util.CommonName;
 
-public class Modify {
+public class DeleteArticle {
 	
-	public boolean  modifyArticle(String id , String article) throws Exception{
+	public boolean deleteArticle(String id)throws Exception {
+		boolean sukses = false; 
+		
 		URL url = new URL(CommonName.URL); 
 		URLConnection ucon = url.openConnection(); 
 		Properties prop = new Properties(); 
@@ -37,37 +38,31 @@ public class Modify {
 		DocumentBuilder dbbuilder = dbfac.newDocumentBuilder();
 		Document doc = dbbuilder.parse(new FileInputStream(articlepath)); 
 		
-		NodeList nodelist = doc.getElementsByTagName(CommonName.ARTICLE_TAG_NAME) ; 
+		NodeList nodelist = doc.getElementsByTagName(CommonName.LIST_ARTICLE_TAG) ; 
+		Node list1 = nodelist.item(0); 
 		
-		for( int i = 0; i < nodelist.getLength(); i++ ){
-			Node node = nodelist.item(i); 
-			NamedNodeMap nnp = node.getAttributes(); 
-			
-			String art_id  = nnp.getNamedItem(CommonName.ARTICLE_ID).getNodeValue() ;
-			if( id .equals(art_id)) {
-				NodeList nl2 = node.getChildNodes(); 
-				Node contentNode = nl2.item(1); 
-				node.removeChild(contentNode); 
-				
-				// Buat Element Baru
-				Element elementBaru = doc.createElement(CommonName.DETAIL_ARTICLE); 
-				elementBaru.setAttribute("text" , article); 
-				
-				node.appendChild(elementBaru); 
+		NodeList nl1 = list1.getChildNodes(); 
+		for(int i =0 ; i < nl1.getLength(); i++){
+			Node n2 = nl1.item(i);
+			if(n2.getNodeName().equals("article")){
+				NamedNodeMap nnp = n2.getAttributes(); 
+				String idx = nnp.getNamedItem(CommonName.ARTICLE_ID).getNodeValue();
+				if(id.equals(idx)) {
+					list1.removeChild(n2);  
+					sukses = true; 
+				}
 			}
+			
 		}
-		
+
 		TransformerFactory tfactory = TransformerFactory.newInstance(); 
 		Transformer transformer = tfactory.newTransformer(); 
-		
-		transformer.setOutputProperty(OutputKeys.INDENT , "yes"); 
+		transformer.setOutputProperty(OutputKeys.INDENT , "yes" ); 
 		
 		DOMSource source = new DOMSource(doc); 
 		StreamResult result = new StreamResult(new PrintStream(new FileOutputStream(articlepath)));
+		transformer.transform(source , result ); 
 		
-		transformer.transform(source, result);  
-		
-		return true; 
+		return sukses; 	
 	}
-
 }
