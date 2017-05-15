@@ -1,0 +1,11 @@
+@CHARSET "ISO-8859-1";
+
+
+.tbl-newarticle , .tbl-logout{
+	position: absolute; left: 262px; top: 255px; width: 300;
+}
+
+.tr-newarticle , .tr-logout {
+	bgcolor: "#FFFFFF" ; 
+}
+

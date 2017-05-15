@@ -10,4 +10,6 @@ if("delete".equals(param)){
 <%}else if("modify".equals(param)){
 %>
 <jsp:forward page="ModifyPage.jsp" ></jsp:forward>
-<%}%>
+
+<%}
+%>

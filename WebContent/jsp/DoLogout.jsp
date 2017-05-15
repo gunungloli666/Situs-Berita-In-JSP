@@ -4,8 +4,9 @@
 
 
 <%
-session.setAttribute("userid","");
-session.invalidate();
+   session.setAttribute("userid","");
+   session.invalidate();
 %>   
+
 <jsp:forward page="Logon.jsp"/>
 

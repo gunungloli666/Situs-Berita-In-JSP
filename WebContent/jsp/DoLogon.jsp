@@ -12,12 +12,12 @@ scope="page"></jsp:useBean>
 <title>Insert title here</title>
 </head>
 <%
-String userid = request.getParameter("user_id"); 
-String userpassword = request.getParameter("user_pass");  
-
-boolean success = false; 
-
-success = login.isValidUser(userid, userpassword); 
+     String userid = request.getParameter("user_id"); 
+     String userpassword = request.getParameter("user_pass");  
+     
+     boolean success = false; 
+     
+     success = login.isValidUser(userid, userpassword); 
 %>
 
 <body>
@@ -36,12 +36,12 @@ if(success){
 	<% }
 }else{ %>
 
-<jsp:forward page="Logon.jsp">
-	<jsp:param name="eror" value="eror"></jsp:param>
-</jsp:forward>
+    <jsp:forward page="Logon.jsp">
+    	<jsp:param name="eror" value="eror"></jsp:param>
+    </jsp:forward>
 
 <%
-}
+ }
 %>
 </body>
 </html>
