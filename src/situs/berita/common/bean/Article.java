@@ -6,11 +6,11 @@ public class Article {
 	
 	private String content;
 
-	public String getTitile() {
+	public String getTitle() {
 		return titile;
 	}
 
-	public void setTitile(String titile) {
+	public void setTitle(String titile) {
 		this.titile = titile;
 	}
 

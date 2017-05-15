@@ -13,24 +13,34 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import situs.berita.common.util.CommonURL;
+import situs.berita.common.util.CommonName;
 
 public class ModifyArticle {
 	
+	private String articleViewed; 
+	
+	public void setArticleViewed(String article){
+		this.articleViewed = article; 
+	}
+	
+	public String getArticleViewed(){
+		return articleViewed; 
+	}
+	
 	public String getArticleContent(String articleid) throws Exception{
 		String result = ""; 
-		URL url = new URL(CommonURL.URL); 
+		URL url = new URL(CommonName.URL); 
 		URLConnection ucon = url.openConnection(); 
 		Properties prop = new Properties(); 
 		
 		prop.load(ucon.getInputStream()); 
-		String articlepath = prop.getProperty(CommonURL.ARTICLE_PATH ); 
+		String articlepath = prop.getProperty(CommonName.ARTICLE_PATH ); 
 		
 		DocumentBuilderFactory dbfac = DocumentBuilderFactory.newInstance(); 
 		DocumentBuilder dbbuilder = dbfac.newDocumentBuilder();
 		Document doc = dbbuilder.parse(new FileInputStream(articlepath)); 
 		
-		NodeList nodelist = doc.getElementsByTagName(CommonURL.ARTICLE_TAG_NAME) ; 
+		NodeList nodelist = doc.getElementsByTagName(CommonName.ARTICLE_TAG_NAME) ; 
 		
 		for(int i = 0; i< nodelist.getLength(); i++ ){
 			Node node = nodelist.item(i); 
@@ -44,7 +54,7 @@ public class ModifyArticle {
 				NamedNodeMap nnp2 = n2.getAttributes(); 
 				String content = nnp2.getNamedItem("text").getNodeValue(); 
 				if(content != null ){
-					return content; 
+					return result = content; 
 				}	
 			}
 		}

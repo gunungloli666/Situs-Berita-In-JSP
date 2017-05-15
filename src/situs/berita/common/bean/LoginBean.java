@@ -14,7 +14,7 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import situs.berita.common.util.CommonURL;
+import situs.berita.common.util.CommonName;
 
 /**
  * 
@@ -36,7 +36,7 @@ public class LoginBean {
 	public  boolean isValidUser(String userid , String userpass
 	) throws Exception{
 		
-		URL url = new URL(CommonURL.URL); 
+		URL url = new URL(CommonName.URL); 
 		URLConnection ucon = url.openConnection(); 
 		
 		Properties  properties = new Properties(); 
