@@ -29,7 +29,7 @@ List<Article> daftarArticle = article.getAllArticle();
  %>
  <tr>
  <td><%= art.getTitle() %></td> 
-  	<td>
+  	<td >
  	    <form method="GET" action="ModifyAndDelete.jsp" > 
  	    	<input type="hidden" name="task" />
  	    	<input type="hidden" name="article_id" value="<%=art.getTitle()%>"/>
@@ -49,12 +49,12 @@ List<Article> daftarArticle = article.getAllArticle();
 <%}%>
 </table>
 
-<table >
-<tr>
-<td> 
-	<b><a href="NewArticle.jsp" >Article Baru</a></b> 
-</td>
-</tr>
+<table>
+	<tr>
+	    <td> 
+	    	<b><a href="NewArticle.jsp" >Article Baru</a></b> 
+	    </td>
+	</tr>
 </table>
 
 
@@ -66,7 +66,7 @@ List<Article> daftarArticle = article.getAllArticle();
 			</div>
 		</td>
 	</tr>
- </table>
+</table>
 
 </body>
 </html>

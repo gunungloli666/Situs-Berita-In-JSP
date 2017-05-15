@@ -18,8 +18,7 @@
 	</tr>
 	<tr>
 		<td>
-			<textarea rows="30" cols="40" name="article_content" >
-			</textarea>
+			<textarea rows="30" cols="40" name="article_content" ></textarea>
 		</td>
 	</tr>
 	
