@@ -14,7 +14,7 @@ if("eror".equals(eror)){
 <p>Invalid User</p>
 <%}%>
 
-<form method="post" action="DoLogon.jsp"  name="form1"> 
+<form method="post" action="doLogon"  name="form1"> 
 	<table> 
 		<tr>
 		   <td>USER ID: </td>
