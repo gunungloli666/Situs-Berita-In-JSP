@@ -50,7 +50,8 @@ public class ViewArticle {
 		     	NamedNodeMap nnp2 = n2.getAttributes(); 
 		     	
 		     	String content = nnp2.getNamedItem("text").getNodeValue(); 
-		     	article.setContent(content); 
+		     	article.setContent(""); 
+		     	
 		     	
 		     	listArticle.add(article);  
 		     }

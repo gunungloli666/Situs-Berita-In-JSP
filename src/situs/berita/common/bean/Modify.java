@@ -56,7 +56,6 @@ public class Modify {
 				node.appendChild(elementBaru); 
 			}
 		}
-		
 		TransformerFactory tfactory = TransformerFactory.newInstance(); 
 		Transformer transformer = tfactory.newTransformer(); 
 		
@@ -66,6 +65,7 @@ public class Modify {
 		StreamResult result = new StreamResult(new PrintStream(new FileOutputStream(articlepath)));
 		
 		transformer.transform(source, result);  
+		
 		
 		return true; 
 	}

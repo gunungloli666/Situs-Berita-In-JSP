@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>SitusBerita</display-name>
+  <welcome-file-list>
+    <welcome-file>mainPage</welcome-file>
+  </welcome-file-list>
+ 
+  <servlet>
+  	<servlet-name>modifyArticle</servlet-name> 
+  	<servlet-class>situs.berita.common.bean.ModifyArticle</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>mainPage</servlet-name>
+  	<servlet-class>page.action.mapping.HomeMapping</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>doLogon</servlet-name> 
+  	<servlet-class>page.action.mapping.DoLogon</servlet-class>
+ </servlet>
+ 
+ <servlet>
+ 	<servlet-name>adminPage</servlet-name>
+ 	<servlet-class>page.action.mapping.AdminPage</servlet-class>
+ </servlet>
+ 
+ <servlet>
+ 	<servlet-name>doLogout</servlet-name>
+ 	<servlet-class>page.action.mapping.DoLogout</servlet-class>
+ </servlet>
+ 
+ <servlet>
+ 	<servlet-name>writeArticle</servlet-name>
+ 	<servlet-class>page.action.mapping.WriteArticle</servlet-class>
+ </servlet>
+ 
+ <servlet>
+ 	<servlet-name>write</servlet-name>
+ 	<servlet-class>page.action.mapping.Write</servlet-class>
+ </servlet>
+ 
+  
+ <servlet-mapping>
+ 	<servlet-name>modifyArticle</servlet-name>
+ 	<url-pattern>/modifyArticle</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet-mapping>
+ 	<servlet-name>mainPage</servlet-name>
+ 	<url-pattern>/mainPage</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet-mapping>
+ 	<servlet-name>doLogon</servlet-name>
+ 	<url-pattern>/doLogon</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet-mapping>
+ 	<servlet-name>doLogout</servlet-name>
+ 	<url-pattern>/doLogout</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet-mapping>
+ 	<servlet-name>adminPage</servlet-name>
+ 	<url-pattern>/adminPage</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet-mapping>
+ 	<servlet-name>writeArticle</servlet-name>
+ 	<url-pattern>/writeArticle</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet-mapping>
+ 	<servlet-name>write</servlet-name>
+ 	<url-pattern>/write</url-pattern>
+ </servlet-mapping>
+  
+</web-app>
