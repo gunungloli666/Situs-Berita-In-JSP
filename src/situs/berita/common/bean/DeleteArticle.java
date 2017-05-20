@@ -24,6 +24,18 @@ import situs.berita.common.util.CommonName;
 
 public class DeleteArticle {
 	
+	private static DeleteArticle delete; 
+	
+	private DeleteArticle(){	 }
+	
+	public static DeleteArticle getNewInstance(){
+		if( delete == null){
+			delete= new DeleteArticle(); 
+		}
+		return delete; 
+	}
+	
+	
 	public boolean deleteArticle(String id)throws Exception {
 		boolean sukses = false; 
 		

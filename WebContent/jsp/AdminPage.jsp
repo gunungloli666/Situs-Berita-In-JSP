@@ -1,72 +1,53 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<jsp:useBean id="article" class="situs.berita.common.bean.ViewArticle"
-				scope="session">
-<%@page import="java.util.List , java.util.ArrayList , situs.berita.common.bean.Article"  %>
-</jsp:useBean>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <html>
 <head>
-
-<link rel="stylesheet" href="../css/common.css" >
-
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Situs Berita Fajar</title>
-
-<style type="text/css" ></style>
+<title>Makan</title>
 </head>
 <body>
-<h4>Daftar Artikel</h4>
-<%
-List<Article> daftarArticle = article.getAllArticle(); 
-%>
-
+	<h1>Admin Page</h1> 
+	
+	<h4>
+		<c:out value="${status }" ></c:out>
+	</h4>
+	<table>
+		<c:forEach items="${ listTitle}" var="nama">
+			<tr>
+				<td><c:out value="${nama}"></c:out></td>
+				<td>
+					<form method="get" action="modifyArticle">
+						<input type="hidden" name="task" /> <input type="hidden"
+							name="articleId" value="${nama }">
+						<table>
+							<tr>
+								<td><input type="button" value="EDIT"
+									onclick="{this.form.task.value='modify'; this.form.submit(); }" />
+								</td>
+								<td><input type="button" value="DELETE"
+									onclick="{this.form.task.value='delete'; this.form.submit(); }" />
+								</td>
+							</tr>
+						</table>
+					</form>
+				</td>
+			</tr>
+		</c:forEach>
+	</table>
+	
 <table>
- <%
- for( Article art : daftarArticle ){
- %>
- <tr>
- <td><%= art.getTitle() %></td> 
-  	<td >
- 	    <form method="GET" action="ModifyAndDelete.jsp" > 
- 	    	<input type="hidden" name="task" />
- 	    	<input type="hidden" name="article_id" value="<%=art.getTitle()%>"/>
- 	    	<table>
- 	    		<tr>
- 					<td>
- 						<input type="button" value="EDIT" onclick="{this.form.task.value='modify'; this.form.submit(); }" /> 
- 					</td> 
- 					<td>
- 						<input type="button" value="DELETE" onclick="{this.form.task.value='delete'; this.form.submit();}" /> 
- 					</td>
- 	    		</tr>
- 	    	</table> 
- 	    </form>
- 	</td>   
-  </tr>
-<%}%>
+<tr>
+	<td><a href="writeArticle" ><b>Buat Artikel Baru</b></a></td>
+</tr>
+
+<tr>
+	<td><a href="logout"><b>Logout</b>
+	</a></td>
+</tr>
 </table>
-
-<table>
-	<tr>
-	    <td> 
-	    	<b><a href="NewArticle.jsp" >Article Baru</a></b> 
-	    </td>
-	</tr>
-</table>
-
-
-<table >
-	<tr>
-		<td>
-			<div>
-				<b><a href="DoLogout.jsp">Logout</a></b>
-			</div>
-		</td>
-	</tr>
-</table>
-
 </body>
 </html>

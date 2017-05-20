@@ -8,12 +8,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import situs.berita.common.bean.DeleteArticle;
 
-public class DeleteArticleAction 
-extends HttpServlet{
+public class DeleteArticleAction  extends HttpServlet{
 	
 	private DeleteArticle delete; 
 	public DeleteArticleAction(){
-		delete = new DeleteArticle(); 
+		delete = DeleteArticle.getNewInstance(); 
 	}
 	
 	public void doGet(HttpServletRequest request , HttpServletResponse response){

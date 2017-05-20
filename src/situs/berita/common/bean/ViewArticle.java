@@ -18,6 +18,17 @@ import situs.berita.common.util.CommonName;
 
 public class ViewArticle {
 	
+	static private ViewArticle instance ; 
+	
+	private ViewArticle(){}
+	
+	public static ViewArticle getInstance( ){
+		if(instance == null){
+			instance = new ViewArticle(); 
+		}
+		return instance; 
+	}
+	
 	public List<Article> getAllArticle() 
 	throws Exception { 
 		URL url = new URL(CommonName.URL);  
@@ -58,6 +69,39 @@ public class ViewArticle {
 		     
 		}
 		return listArticle; 
+	}
+	
+	
+	public List<String> getAllTitle( ) throws Exception{
+		URL url = new URL(CommonName.URL);  
+		URLConnection ucon = url.openConnection(); 
+		Properties prop = new Properties(); 
+		
+		prop.load(ucon.getInputStream()); 
+		String articlepath = prop.getProperty( CommonName.ARTICLE_PATH ) ;
+		
+		DocumentBuilderFactory dbfac = DocumentBuilderFactory.newInstance(); 
+		DocumentBuilder dbuild = dbfac.newDocumentBuilder(); 
+		Document doc = dbuild.parse(new FileInputStream(articlepath)); 
+		
+		NodeList nodelist = doc.getElementsByTagName("article"); 
+		List<String> listArticle = new ArrayList<>();
+	
+		for(int i = 0; i < nodelist.getLength(); i++){
+		
+		     Node n = nodelist.item(i);  
+		     NamedNodeMap  nnp = n.getAttributes(); 
+		     String title = nnp.getNamedItem("articleid").getNodeValue(); 
+		    
+		     if(title != null && ! title.isEmpty()){
+
+
+		     	listArticle.add(title);  
+		     }
+		     
+		}
+		return listArticle; 
+
 	}
 
 }

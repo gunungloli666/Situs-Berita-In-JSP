@@ -7,7 +7,7 @@
  
   <servlet>
   	<servlet-name>modifyArticle</servlet-name> 
-  	<servlet-class>situs.berita.common.bean.ModifyArticle</servlet-class>
+  	<servlet-class>page.action.mapping.ModifyArticleAction</servlet-class>
   </servlet>
   
   <servlet>
@@ -22,7 +22,7 @@
  
  <servlet>
  	<servlet-name>adminPage</servlet-name>
- 	<servlet-class>page.action.mapping.AdminPage</servlet-class>
+ 	<servlet-class>page.action.mapping.AdminPageAction</servlet-class>
  </servlet>
  
  <servlet>
@@ -37,9 +37,19 @@
  
  <servlet>
  	<servlet-name>write</servlet-name>
- 	<servlet-class>page.action.mapping.Write</servlet-class>
+ 	<servlet-class>page.action.mapping.WriteAction</servlet-class>
  </servlet>
  
+ <servlet>
+ 	<servlet-name>test</servlet-name>
+ 	<servlet-class>com.berita.test.Example</servlet-class>
+ </servlet>
+ 
+ <servlet>
+ 	<servlet-name>modify</servlet-name>
+ 	<servlet-class>page.action.mapping.ModifyAction</servlet-class>
+ </servlet>
+
   
  <servlet-mapping>
  	<servlet-name>modifyArticle</servlet-name>
@@ -74,6 +84,16 @@
  <servlet-mapping>
  	<servlet-name>write</servlet-name>
  	<url-pattern>/write</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet-mapping>
+ 	<servlet-name>test</servlet-name> 
+ 	<url-pattern>/test</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet-mapping>
+ 	<servlet-name>modify</servlet-name>
+ 	<url-pattern>/modify</url-pattern>
  </servlet-mapping>
   
 </web-app>

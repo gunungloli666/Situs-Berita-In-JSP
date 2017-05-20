@@ -22,6 +22,16 @@ import situs.berita.common.util.CommonName;
 
 public class Write {
 	
+	private static Write instance; 
+	private Write(){}
+	
+	public static  Write getNewInstance(){
+		if(instance == null){
+			instance = new Write(); 
+		}
+		return instance; 
+	}
+	
 	public boolean  writeArticle( String id, String content) throws Exception{
 		boolean success = false; 
 		
