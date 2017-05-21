@@ -22,7 +22,7 @@
 				<td>
 					<form method="get" action="modifyArticle">
 						<input type="hidden" name="task" /> <input type="hidden"
-							name="articleId" value="${nama }">
+							name="articleId" value="${nama}">
 						<table>
 							<tr>
 								<td><input type="button" value="EDIT"
