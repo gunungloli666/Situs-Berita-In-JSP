@@ -14,7 +14,7 @@ public class ModifyArticleAction extends HttpServlet{
 	private DeleteArticle delete; 
 	
 	public ModifyArticleAction(){
-		modify = ModifyArticle.getNewInstance(); 
+		modify = ModifyArticle.getInstance(); 
 		delete = DeleteArticle.getNewInstance(); 
 	}
 	

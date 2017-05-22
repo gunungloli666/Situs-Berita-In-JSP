@@ -13,7 +13,7 @@ public class ModifyAction extends HttpServlet{
 	private ModifyArticle modify; 
 	
 	public ModifyAction(){
-		modify = ModifyArticle.getNewInstance(); 
+		modify = ModifyArticle.getInstance(); 
 	}
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) {

@@ -39,7 +39,7 @@ public class ModifyArticle {
 		return articleViewed; 
 	}
 	
-	public static ModifyArticle getNewInstance(){
+	public static ModifyArticle getInstance(){
 		if( instance == null){
 			instance = new ModifyArticle(); 
 		}

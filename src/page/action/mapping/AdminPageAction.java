@@ -47,6 +47,7 @@ public class AdminPageAction extends HttpServlet{
 				page = Integer.parseInt( request.getParameter("page"));  
 			}
 			
+			
 			List<String> listArticle = viewArticle.getAllTitle();
 			
 			request.setAttribute("listTitle", listArticle) ; 

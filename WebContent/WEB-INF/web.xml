@@ -49,6 +49,12 @@
  	<servlet-name>modify</servlet-name>
  	<servlet-class>page.action.mapping.ModifyAction</servlet-class>
  </servlet>
+ 
+ 
+ <servlet>
+ 	<servlet-name>showArticle</servlet-name>
+ 	<servlet-class>page.action.mapping.ShowArticleAction</servlet-class>
+ </servlet>
 
   
  <servlet-mapping>
@@ -94,6 +100,11 @@
  <servlet-mapping>
  	<servlet-name>modify</servlet-name>
  	<url-pattern>/modify</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet-mapping>
+ 	<servlet-name>showArticle</servlet-name>
+ 	<url-pattern>/showArticle</url-pattern>
  </servlet-mapping>
   
 </web-app>

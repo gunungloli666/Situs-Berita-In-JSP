@@ -61,7 +61,7 @@ public class ViewArticle {
 		     	NamedNodeMap nnp2 = n2.getAttributes(); 
 		     	
 		     	String content = nnp2.getNamedItem("text").getNodeValue(); 
-		     	article.setContent(""); 
+		     	article.setContent(""); // nanti ganti dengan isi dari artikel 
 		     	
 		     	
 		     	listArticle.add(article);  
@@ -69,6 +69,16 @@ public class ViewArticle {
 		     
 		}
 		return listArticle; 
+	}
+	
+	public List<String> getTitleByNumber(){ 
+		
+		return null; 
+	}
+	
+	public String getArticleById( String id) throws Exception { 
+		
+		return ""; 
 	}
 	
 	
@@ -88,20 +98,14 @@ public class ViewArticle {
 		List<String> listArticle = new ArrayList<>();
 	
 		for(int i = 0; i < nodelist.getLength(); i++){
-		
 		     Node n = nodelist.item(i);  
 		     NamedNodeMap  nnp = n.getAttributes(); 
 		     String title = nnp.getNamedItem("articleid").getNodeValue(); 
-		    
 		     if(title != null && ! title.isEmpty()){
-
-
 		     	listArticle.add(title);  
 		     }
-		     
 		}
 		return listArticle; 
-
 	}
 
 }
